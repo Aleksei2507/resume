@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Алексей Осипов — Senior Frontend Developer</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Алексей Осипов",
+        "alternateName": "Alexey Osipov",
+        "url": "https://resume.proitovsky.ru/",
+        "image": "https://ui-avatars.com/api/?name=Alexey+Osipov&background=dedede",
+        "jobTitle": "Senior Frontend Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Rexalto.tech"
+        },
+        "email": "mailto:djaleksmart@gmail.com",
+        "sameAs": ["https://t.me/atomSmart"],
+        "description": "Senior Frontend Developer с более чем 10-летним опытом. Специализация: масштабируемые интерфейсы на React и Next.js, архитектура систем, интеграция современных API.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "Россия"
+        }
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://ui-avatars.com/api/?name=Alexey+Osipov&background=dedede"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      :root {
+        --color-primary: #38bdf8;
+        --color-primary-light: #67e8f9;
+        --color-bg-start: #0f172a;
+        --color-bg-end: #1e293b;
+        --color-header-bg: rgba(15, 23, 42, 0.8);
+        --color-text: #f8fafc;
+        --color-muted: #94a3b8;
+        --color-border: #64748b;
+        --color-card: rgba(30, 41, 59, 0.8);
+        --color-card-hover: rgba(51, 65, 85, 0.9);
+      }
+
+      [data-theme="light"] {
+        --color-bg-start: #f1f5f9;
+        --color-bg-end: #e2e8f0;
+        --color-header-bg: rgba(255, 255, 255, 0.8);
+        --color-text: #1e293b;
+        --color-muted: #475569;
+        --color-border: #94a3b8;
+        --color-card: #ffffff;
+        --color-card-hover: #f1f5f9;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(
+          270deg,
+          var(--color-bg-start),
+          var(--color-bg-end)
+        );
+        background-size: 400% 400%;
+        color: var(--color-text);
+        animation: gradientShift 15s ease infinite;
+        overflow-x: hidden;
+        transition: background 0.5s ease, color 0.5s ease;
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      header {
+        text-align: center;
+        padding: 6rem 2rem 2rem;
+        background: var(--color-header-bg);
+        backdrop-filter: blur(10px);
+        animation: fadeInDown 1s ease forwards;
+        position: relative;
+      }
+      header h1 {
+        font-size: 3.5rem;
+        margin: 0;
+      }
+      header p {
+        margin-top: 1rem;
+        color: var(--color-muted);
+        font-size: 1.2rem;
+      }
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: var(--color-primary-light);
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+      }
+      .theme-toggle svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--color-text);
+        stroke-width: 2px;
+        transition: stroke 0.3s ease;
+      }
+      .theme-toggle:hover svg {
+        stroke: var(--color-primary-light);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+      section {
+        margin-bottom: 5rem;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      h2 {
+        font-size: 2.2rem;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        background: var(--color-card);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.4s ease, background 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        background: var(--color-card-hover);
+        box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+      }
+
+      .card ul {
+        list-style: none;
+        padding-left: 1rem; /* чуть меньше отступ */
+        margin-top: 1rem;
+      }
+
+      .card ul li {
+        position: relative;
+        padding-left: 1.8rem; /* больше места под маркер */
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+
+      .card ul li::before {
+        content: "";
+        position: absolute;
+        top: 0.55rem;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+      }
+      .skills h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: var(--color-text);
+      }
+      .skills ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .skills a,
+      .skills li > span {
+        background: var(--color-card-hover);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-text);
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .skills a:hover,
+      .skills li > span:hover {
+        background: var(--color-primary);
+        color: var(--color-bg-start);
+        transform: scale(1.05);
+      }
+      .skills a:hover .skills li > span:hover {
+        text-decoration: underline;
+      }
+      .skills li svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--color-primary);
+        transition: stroke 0.3s ease;
+      }
+      .skills li:hover svg {
+        stroke: var(--color-bg-start);
+      }
+      .skills hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--color-border),
+          transparent
+        );
+        margin: 2rem 0;
+        opacity: 0.6;
+      }
+      .projects-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .project-item {
+        flex: 1 1 450px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: var(--color-card);
+        padding: 1rem;
+        border-radius: 12px;
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+      }
+      .project-item:hover {
+        background: var(--color-card-hover);
+        transform: translateY(-5px);
+      }
+      .project-item svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--color-text);
+        transition: transform 0.3s ease, stroke 0.3s ease;
+      }
+      .project-item:hover svg {
+        transform: scale(1.2);
+        stroke: var(--color-primary-light);
+      }
+      .project-item span {
+        font-weight: bold;
+        color: var(--color-primary);
+      }
+      .project-item:hover span {
+        text-decoration: underline;
+      }
+      .project-desc {
+        font-size: 0.9rem;
+        color: var(--color-muted);
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: var(--color-border);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle">
+      <i data-lucide="moon"></i>
+    </button>
+    <header>
+      <h1>Алексей Осипов</h1>
+      <p>
+        Senior Frontend Developer — Разработка масштабируемых фронтенд-решений
+      </p>
+      <p>
+        <a href="mailto:djaleksmart@gmail.com">djaleksmart@gmail.com</a> |
+        <a href="http://t.me/atomSmart">Telegram</a> | Москва
+      </p>
+    </header>
+
+    <div class="container">
+      <section>
+        <h2>Обо мне</h2>
+        <div class="card">
+          <ul>
+            <li>Senior Frontend Developer с более чем 10-летним опытом разработки.</li>
+            <li>Специализируюсь на создании масштабируемых интерфейсов на базе React
+            и Next.js, проектировании систем управления состоянием и интеграции
+            с современными API.</li>
+            <li>Разработчик мобильного текстового квеста
+            «Пандемия 3: Побег», разработанного на React Native.</li>
+            <li>Ориентирован на
+            практическую ценность решений и высокую надёжность в разработке.</li>
+          </uг>
+        </div>
+      </section>
+
+      <section class="skills">
+        <h2>Ключевые навыки</h2>
+        <h3>🖌️ Frontend</h3>
+        <ul>
+          <li>
+            <a href="https://react.dev/" target="_blank"
+              ><i data-lucide="code"></i> React</a
+            >
+          </li>
+          <li>
+            <a href="https://nextjs.org/" target="_blank"
+              ><i data-lucide="layout"></i> Next.js</a
+            >
+          </li>
+          <li>
+            <a href="https://www.typescriptlang.org/" target="_blank"
+              ><i data-lucide="type"></i> TypeScript</a
+            >
+          </li>
+          <li>
+            <a href="https://redux.js.org/" target="_blank"
+              ><i data-lucide="repeat"></i> Redux</a
+            >
+          </li>
+          <li>
+            <a href="https://mobx-state-tree.js.org/" target="_blank"
+              ><i data-lucide="layers"></i> MobX State Tree</a
+            >
+          </li>
+          <li>
+            <a href="https://styled-components.com/" target="_blank"
+              ><i data-lucide="paintbrush"></i> Styled-components</a
+            >
+          </li>
+          <li>
+            <a href="https://tailwindcss.com/" target="_blank"
+              ><i data-lucide="wind"></i> Tailwind CSS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              target="_blank"
+              ><i data-lucide="code"></i> HTML5</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+              target="_blank"
+              ><i data-lucide="code"></i> CSS3</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              ><i data-lucide="terminal"></i> JavaScript</a
+            >
+          </li>
+        </ul>
+        <hr />
+
+        <h3>⚙️ Dev Tools</h3>
+        <ul>
+          <li>
+            <a href="https://vitejs.dev/" target="_blank"
+              ><i data-lucide="zap"></i> Vite</a
+            >
+          </li>
+          <li>
+            <a href="https://webpack.js.org/" target="_blank"
+              ><i data-lucide="package"></i> Webpack</a
+            >
+          </li>
+          <li>
+            <a href="https://eslint.org/" target="_blank"
+              ><i data-lucide="file-code"></i> ESLint</a
+            >
+          </li>
+          <li>
+            <a href="https://prettier.io/" target="_blank"
+              ><i data-lucide="wand"></i> Prettier</a
+            >
+          </li>
+          <li>
+            <a href="https://git-scm.com/" target="_blank"
+              ><i data-lucide="git-branch"></i> Git</a
+            >
+          </li>
+          <li>
+            <a href="https://storybook.js.org/" target="_blank"
+              ><i data-lucide="book-open"></i> Storybook</a
+            >
+          </li>
+          <li>
+            <a href="https://jestjs.io/" target="_blank"
+              ><i data-lucide="check-circle"></i> Jest</a
+            >
+          </li>
+          <li>
+            <a href="https://app.diagrams.net/" target="_blank">
+              <i data-lucide="layers"></i>
+              Draw.io (Diagrams.net)
+            </a>
+          </li>
+        </ul>
+        <hr />
+
+        <h3>🌐 Backend & API</h3>
+        <ul>
+          <li>
+            <a href="https://nodejs.org/" target="_blank"
+              ><i data-lucide="server"></i> Node.js</a
+            >
+          </li>
+          <li>
+            <a href="https://graphql.org/" target="_blank"
+              ><i data-lucide="network"></i> GraphQL</a
+            >
+          </li>
+          <li>
+            <a href="https://axios-http.com/" target="_blank"
+              ><i data-lucide="send"></i> Axios</a
+            >
+          </li>
+        </ul>
+        <hr />
+
+        <h3>🛠️ Development & Automation</h3>
+        <ul>
+          <li>
+            <span><i data-lucide="bot"></i> Разработка парсинг-ботов</span>
+          </li>
+          <li>
+            <span>
+              <i data-lucide="file-text"></i> Проектирование DSL для описания
+              схем данных
+            </span>
+          </li>
+        </ul>
+        <hr />
+
+        <h3>🎨 Design & Prototyping</h3>
+        <ul>
+          <li>
+            <a href="https://figma.com/" target="_blank"
+              ><i data-lucide="image"></i> Figma</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Опыт работы</h2>
+
+        <div class="card">
+          <strong>Senior Front-end Developer</strong> — Rexalto.tech (2023 —
+          настоящее время)
+          <ul>
+            <li>
+              Разработка и поддержка white-label витрин и бекофисов для
+              клиентов.
+            </li>
+            <li>
+              Реализация BFF на Nest.js: проксирование HTTP-запросов в
+              gRPC-сервисы, склейка сущностей, преобразование proto-файлов в
+              TypeScript код, внедрение системы версионирования API.
+            </li>
+            <li>Интеграция Stripe для обработки платежей.</li>
+            <li>
+              Участие в проектировании технической архитектуры (Tech Design):
+              разработка компонентов, проектирование API и потоков данных.
+            </li>
+            <li>
+              Разработка бота для парсинга сайтов: написание скриптов для
+              обработки данных и создание DSL-языка для описания схем парсинга.
+            </li>
+            <li>Оптимизация запросов и обеспечение масштабируемости систем.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Senior Front-end Developer</strong> — Belkacar (2020 — 2022)
+          <ul>
+            <li>
+              Разработка архитектуры фронтенда, использование монорепозитория
+              (yarn workspaces), управление состоянием через MobX State Tree.
+            </li>
+            <li>
+              Создание с нуля конструктора in-app опросников для Pushwoosh:
+              проектирование UX/UI, логика переходов, запись пользовательских
+              данных, предпросмотр, оптимизация веса шаблонов.
+            </li>
+            <li>
+              Запуск технологического продукта «Подписка» для Audi и Škoda
+              (drive.audi.ru, smartdrive.skoda-avto.ru).
+            </li>
+            <li>
+              Оптимизация производительности in-app опросников и минимизация
+              сетевых запросов.
+            </li>
+            <li>
+              Активное участие в оптимизации процессов CI/CD и снижении времени
+              сборки проектов.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Full Stack Developer</strong> — Osome (2019 — 2020)
+          <ul>
+            <li>
+              Разработка сервисов для регистрации компаний и бухгалтерского
+              сопровождения.
+            </li>
+            <li>
+              Генерация документов, распознавание чеков и адаптивная верстка
+              сайта.
+            </li>
+            <li>
+              Перевод легаси-кода на React-хуки, устранение технического долга.
+            </li>
+            <li>
+              Разработка кастомного сборщика SSR-проекта блога и сайта на базе
+              Grunt для оптимизации скорости загрузки и SEO.
+            </li>
+            <li>
+              Ускорение рендеринга страниц, оптимизация загрузки изображений и
+              улучшение производительности на мобильных устройствах.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Frontend Developer / Тимлид</strong> — Rambler&Co (2018 —
+          2019)
+          <ul>
+            <li>
+              Разработка криптоплатформы на React/Redux с поддержкой real-time
+              обновления данных.
+            </li>
+            <li>
+              Руководство командой фронтенд-разработки сайта онлайн-медицины:
+              планирование задач, код-ревью, менторство, участие в архитектурных
+              решениях.
+            </li>
+            <li>Работа над медиа-проектами на Nuxt.js (Vue).</li>
+            <li>
+              Решение задач масштабируемости архитектуры и повышения
+              отзывчивости интерфейсов при высокой нагрузке.
+            </li>
+            <li>
+              Внедрение лучших практик тестирования и контроля качества кода.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Проекты</h2>
+        <div class="projects-list">
+          <a
+            href="https://www.rexalto.tech/ecp"
+            target="_blank"
+            class="project-item"
+          >
+            <i data-lucide="shopping-cart"></i>
+            <div>
+              <span>ECP</span>
+              <div class="project-desc">
+                Платформа для управления автопарком с автоматической аналитикой
+                и дашбордами
+              </div>
+            </div>
+          </a>
+
+          <a href="https://ampe.ai" target="_blank" class="project-item">
+            <i data-lucide="line-chart"></i>
+            <div>
+              <span>Ampe.ai</span>
+              <div class="project-desc">
+                Личный кабинет динамического ценообразования
+              </div>
+            </div>
+          </a>
+
+          <a href="https://drive.audi.ru" target="_blank" class="project-item">
+            <i data-lucide="car"></i>
+            <div>
+              <span>Audi.ru</span>
+              <div class="project-desc">Сервис подписки на автомобили Audi</div>
+            </div>
+          </a>
+
+          <a
+            href="https://smartdrive.skoda-avto.ru"
+            target="_blank"
+            class="project-item"
+          >
+            <i data-lucide="car"></i>
+            <div>
+              <span>Skoda-avto.ru</span>
+              <div class="project-desc">
+                Сервис подписки на автомобили Škoda
+              </div>
+            </div>
+          </a>
+
+          <a href="https://osome.com" target="_blank" class="project-item">
+            <i data-lucide="globe"></i>
+            <div>
+              <span>Osome.com</span>
+              <div class="project-desc">
+                Финансовый сервис для предпринимателей
+              </div>
+            </div>
+          </a>
+
+          <a href="https://copper.co" target="_blank" class="project-item">
+            <i data-lucide="shield"></i>
+            <div>
+              <span>Copper.co</span>
+              <div class="project-desc">
+                Платформа цифровых активов для инвесторов
+              </div>
+            </div>
+          </a>
+          <a href="https://vo-da.ru/" target="_blank" class="project-item">
+            <i data-lucide="droplet"></i>
+            <div>
+              <span>Vo-da.ru</span>
+              <div class="project-desc">
+                Производитель очистного и емкостного оборудования
+              </div>
+            </div>
+          </a>
+
+          <a href="https://vympel.group/" target="_blank" class="project-item">
+            <i data-lucide="building-2"></i>
+            <div>
+              <span>Vympel.group</span>
+              <div class="project-desc">
+                Газоанализаторы, расходомеры и системы телемеханики
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Образование</h2>
+        <div class="card">
+          <p>
+            Профессиональный колледж г. Новокузнецк (2014)<br />Специальность:
+            Программное обеспечение вычислительной техники и автоматизированных
+            систем, техник-программист.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer>&copy; <span id="year"></span> Алексей Осипов</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("themeToggle");
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        document.body.dataset.theme = savedTheme;
+
+        themeToggle.innerHTML = "";
+        const icon = document.createElement("i");
+        icon.setAttribute(
+          "data-lucide",
+          savedTheme === "light" ? "sun" : "moon"
+        );
+        themeToggle.appendChild(icon);
+        lucide.createIcons();
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = document.body.dataset.theme;
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+
+          document.body.dataset.theme = newTheme;
+          localStorage.setItem("theme", newTheme);
+
+          themeToggle.innerHTML = "";
+          const newIcon = document.createElement("i");
+          newIcon.setAttribute(
+            "data-lucide",
+            newTheme === "light" ? "sun" : "moon"
+          );
+          themeToggle.appendChild(newIcon);
+          lucide.createIcons();
+        });
+
+        sections.forEach(section => observer.observe(section));
+      });
+    </script>
+  </body>
+</html>
