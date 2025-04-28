@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx --fix",
-    "deploy": "npm run build && cp CNAME dist/CNAME && gh-pages -d dist"
+    "deploy": "npm run build && cp CNAME dist/CNAME && cp -r ./images dist && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",

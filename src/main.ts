@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = new Date().getFullYear().toString();
   }
 
-  document.body.dataset.theme = savedTheme;
+  document.documentElement.dataset.theme = savedTheme;
 
   if (themeToggle) {
     themeToggle.innerHTML = '';
@@ -100,12 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.append(newIconElement);
 
     const toggleTheme = (event?: MouseEvent) => {
-      const isLight = document.body.dataset.theme === 'light';
+      const isLight = document.documentElement.dataset.theme === 'light';
       const newTheme = isLight ? 'dark' : 'light';
 
       const changeTheme = () => {
-        document.body.dataset.theme = newTheme;
-        document.body.classList.toggle('dark', newTheme === 'dark');
+        document.documentElement.dataset.theme = newTheme;
         localStorage.setItem('theme', newTheme);
 
         const iconElement = themeToggle.querySelector('svg');

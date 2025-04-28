@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +28,10 @@
         }
       }
     </script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.dataset.theme = theme;
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resume.proitovsky.ru/">
   <meta property="og:title" content="Алексей Осипов — Senior Frontend Developer">
