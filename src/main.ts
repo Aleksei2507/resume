@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  const isSafari = /^Apple/.test(navigator.vendor);
   const themeToggle = document.getElementById('themeToggle') as HTMLElement;
   const yearElement = document.getElementById('year') as HTMLElement;
   const sections = document.querySelectorAll<HTMLElement>('section');
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.append(newIconElement);
       };
 
-      if (document.startViewTransition) {
+      if (!isSafari && document.startViewTransition) {
         document.startViewTransition(changeTheme);
       } else {
         requestAnimationFrame(changeTheme);
